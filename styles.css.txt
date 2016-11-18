@@ -1,0 +1,31 @@
+body {
+ background:#3366cc;
+}
+
+h1 {
+  color:white;
+  font-family: 'Ravi Prakash', cursive;
+  width: 100%;
+  font-size: 6em;
+  text-align: center;
+}
+
+button {
+  color:black;
+  width: 10%;
+  font-size:3em;
+  text-align:center;
+  margin: 500px 0 0 900px;
+}
+
+.queto {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 5em;
+  text-align:center;
+}
+
+.name {
+  font-family: 'Shrikhand', cursive;
+  font-size: 3em;
+  text-align: center;
+}
