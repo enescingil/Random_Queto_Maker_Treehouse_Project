@@ -1,8 +1,10 @@
 var splicedQueto = [];
+var viewedQueto = [];
 var newQueto;
 var randomQueto;
+var intervalID;
 var quetos = [
-  {name: "Mark Twain", Queto: "The secret of getting ahead is getting started."},
+  {name: "Mark Twain", Queto: "The secret of getting ahead is getting started.",},
   {name: "Mark Twain", Queto: "I can live for two months on a good compliment."},
   {name: "Mark Twain", Queto: "The lack of money is the root of all evil."},
   {name: "Mark Twain", Queto: "Get your facts first, then you can distort them as you please.",},
@@ -22,6 +24,11 @@ var quetos = [
 function getRandomQueto() {
   randomQueto = Math.floor(Math.random() * (quetos.length));
   splicedQueto = quetos.splice(randomQueto, 1)[0];
+  viewedQueto.push(splicedQueto);
+  if (quetos.length == 0) {
+   quetos = viewedQueto;
+   viewedQueto = [];
+  }
   return splicedQueto;
 }
 
@@ -31,3 +38,15 @@ function printQueto() {
   html += "<p class='name'>" + newQueto.name + "</p>";
   document.getElementById('quote-box').innerHTML = html;
 }
+
+$(function () {
+  $(".button1").click(
+    function changeColor () {
+    var colors = ["red", "green", "blue", "gray", "pink", "AliceBlue", "aqua", "aquamarine", "azure",  "brown", "darkblue", "crimson", "darkgreen", "darkred", "dodgerblue", "gold", "linen", "mediumorchid", "midnightblue", "palegreen", "tomato", "teal", "yellogreen"];
+    var randomNumber = Math.floor(Math.random() * colors.length);
+    var color = colors[randomNumber];
+      $("body").css("background-color", color);
+    });
+})();
+
+    
