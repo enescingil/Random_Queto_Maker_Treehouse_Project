@@ -1,3 +1,5 @@
+/* General Background */
+
 body {
  background:#3366cc;
 }
@@ -9,14 +11,17 @@ h1 {
   font-size: 6em;
   text-align: center;
 }
+/* Button Display Settings */
 
 button {
+  display:block;
   color:black;
   width: 10%;
   font-size:3em;
   text-align:center;
-  margin: 500px 0 0 900px;
+  margin: 0 auto;
 }
+/* Queto Display Settings */
 
 .queto {
   font-family: 'Open Sans Condensed', sans-serif;

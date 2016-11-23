@@ -2,7 +2,6 @@ var splicedQueto = [];
 var viewedQueto = [];
 var newQueto;
 var randomQueto;
-var intervalID;
 var quetos = [
   {name: "Mark Twain", Queto: "The secret of getting ahead is getting started.",},
   {name: "Mark Twain", Queto: "I can live for two months on a good compliment."},
@@ -21,6 +20,7 @@ var quetos = [
   {name: "Plato", Queto: "He was a wise man who invented beer."}
 ];
 
+/* Get a random Queto and push it to the another array, if quetos is empty repeat the process.*/
 function getRandomQueto() {
   randomQueto = Math.floor(Math.random() * (quetos.length));
   splicedQueto = quetos.splice(randomQueto, 1)[0];
@@ -32,13 +32,16 @@ function getRandomQueto() {
   return splicedQueto;
 }
 
+/* Take the randomQueto and put(write) it to the quote-box in html */
 function printQueto() {
+  
   newQueto = getRandomQueto();
   var html = "<p class='queto'>" + newQueto.Queto + "</p>";
   html += "<p class='name'>" + newQueto.name + "</p>";
   document.getElementById('quote-box').innerHTML = html;
 }
 
+/* From the click of a button, choose a color from the array and put it to the css background color*/
 $(function () {
   $(".button1").click(
     function changeColor () {
@@ -48,5 +51,3 @@ $(function () {
       $("body").css("background-color", color);
     });
 })();
-
-    
